@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatik Rahman | Top Rated Plus Upwork Freelancer &amp; Freelancing Mentor</title>
+<meta name="description" content="Discover the professional journey of Fatik Rahman, a Top Rated Plus Upwork Freelancer, Upwork Coach, Freelancing Mentor, Entrepreneur, Web Developer, and Digital Business Strategist.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fatik Rahman | Top Rated Plus Upwork Freelancer &amp; Freelancing Mentor">
+<meta property="og:description" content="Discover the professional journey of Fatik Rahman, a Top Rated Plus Upwork Freelancer, Upwork Coach, Freelancing Mentor, Entrepreneur, Web Developer, and Digital Business Strategist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   FATIK RAHMAN — PERSONAL BRAND SITE
+   Palette:
+   --bg        #F8F6F1  primary background (warm ivory)
+   --bg-soft   #FFF9F0  secondary background
+   --peach     #FFE1BD  soft peach
+   --ink       #0A0A0A  primary black
+   --accent    #FF7426  accent orange
+   --muted     #68645F  muted text
+   --line      #DDD8CF  borders
+   ============================================================ */
+:root{
+  --bg:#F8F6F1;
+  --bg-soft:#FFF9F0;
+  --peach:#FFE1BD;
+  --ink:#0A0A0A;
+  --accent:#FF7426;
+  --muted:#68645F;
+  --line:#DDD8CF;
+  --white:#FFFFFF;
+  --font-head:'Anton',sans-serif;
+  --font-serif:'Instrument Serif',serif;
+  --font-body:'Manrope',sans-serif;
+  --radius-lg:28px;
+  --radius-md:18px;
+  --max:1240px;
+  --pad:clamp(20px,4vw,56px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer}
+
+::selection{background:var(--accent);color:var(--white)}
+
+a:focus-visible,button:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+section{position:relative}
+
+/* ---------- shared typography ---------- */
+.h-display{
+  font-family:var(--font-head);
+  font-weight:400;
+  text-transform:uppercase;
+  line-height:.96;
+  letter-spacing:.01em;
+}
+.serif-i{font-family:var(--font-serif);font-style:italic;font-weight:400}
+.section-label{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:28px;
+}
+.section-label::before{content:"";width:36px;height:1px;background:var(--accent)}
+.lead{font-size:clamp(16px,1.4vw,19px);color:var(--muted);max-width:62ch}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 32px;border-radius:999px;
+  font-family:var(--font-body);font-weight:700;font-size:15px;
+  border:1.5px solid transparent;
+  transition:transform .25s ease,background .25s ease,color .25s ease,border-color .25s ease;
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark{background:var(--ink);color:var(--white)}
+.btn-dark:hover{background:var(--accent)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--white)}
+.btn-orange{background:var(--accent);color:var(--white)}
+.btn-orange:hover{background:var(--white);color:var(--ink)}
+.btn-white-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.6)}
+.btn-white-outline:hover{background:var(--white);color:var(--ink)}
+.btn .arrow{transition:transform .25s ease}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* ---------- reveal animation ----------
+   Hidden state applies only when JS is running (html.js), so the page
+   is fully visible for no-JS visitors, crawlers, and static renders. */
+html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+html.js .reveal.in{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}
+.reveal-d2{transition-delay:.2s}
+.reveal-d3{transition-delay:.3s}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  transition:border-color .35s ease,box-shadow .35s ease;
+  border-bottom:1px solid transparent;
+}
+/* blur layer lives on a pseudo-element: backdrop-filter on the header itself
+   would turn it into a containing block and trap the fixed mobile-nav overlay */
+.site-header::before{
+  content:"";position:absolute;inset:0;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  opacity:0;transition:opacity .35s ease;
+  pointer-events:none;
+}
+.site-header.scrolled{
+  border-bottom-color:var(--line);
+  box-shadow:0 2px 18px rgba(10,10,10,.05);
+}
+.site-header.scrolled::before{opacity:1}
+.header-inner{
+  position:relative;
+  max-width:var(--max);margin:0 auto;
+  padding:18px var(--pad);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.logo{font-family:var(--font-serif);font-style:italic;font-size:30px;line-height:1;position:relative;z-index:99}
+.logo span{color:var(--accent)}
+.main-nav ul{display:flex;gap:clamp(16px,2.2vw,32px)}
+.main-nav a{
+  position:relative;font-size:14px;font-weight:600;color:var(--ink);
+  padding:6px 2px;
+}
+.main-nav a::after{
+  content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.main-nav a:hover::after,.main-nav a:focus-visible::after{transform:scaleX(1)}
+.header-cta{padding:12px 26px;font-size:14px}
+.menu-toggle{
+  display:none;background:none;border:none;width:44px;height:44px;
+  flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  position:relative;z-index:99;
+}
+.menu-toggle span{display:block;width:24px;height:2px;background:var(--ink);transition:transform .3s ease,opacity .3s ease}
+.menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* mobile nav */
+@media (max-width:960px){
+  html.js .menu-toggle{display:flex}
+  .header-cta{display:none}
+  html.js .main-nav{
+    position:fixed;inset:0;top:0;background:var(--bg-soft);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .3s ease,visibility .3s ease;
+    z-index:98;
+  }
+  html.js .main-nav.open{opacity:1;visibility:visible;pointer-events:auto}
+  html.js .main-nav ul{flex-direction:column;text-align:center;gap:8px}
+  html.js .main-nav a{font-family:var(--font-head);font-size:34px;text-transform:uppercase;font-weight:400}
+  html.js .main-nav a::after{height:3px}
+  /* no-JS fallback: plain wrapped links instead of the scripted overlay */
+  html:not(.js) .main-nav ul{flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}
+  html:not(.js) .main-nav a{font-size:13px}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  padding:clamp(140px,18vh,190px) 0 0;
+  background:
+    radial-gradient(900px 600px at 78% 30%,var(--peach) 0%,rgba(255,225,189,0) 62%),
+    linear-gradient(180deg,var(--bg-soft) 0%,var(--bg) 100%);
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  align-items:end;gap:clamp(24px,4vw,64px);
+}
+.hero-copy{padding-bottom:clamp(48px,7vw,96px)}
+.badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--white);border:1px solid var(--line);border-radius:999px;
+  padding:9px 18px;font-size:13px;font-weight:600;color:var(--ink);
+  margin-bottom:26px;
+}
+.badge .dot{
+  width:9px;height:9px;border-radius:50%;background:var(--accent);
+  animation:pulse 2.2s infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,116,38,.45)}
+  55%{box-shadow:0 0 0 7px rgba(255,116,38,0)}
+}
+.hero-hi{
+  font-family:var(--font-serif);font-style:italic;
+  font-size:clamp(28px,3.4vw,44px);color:var(--ink);
+  margin-bottom:10px;
+}
+.hero-hi em{color:var(--accent);font-style:italic}
+.hero-title{
+  font-size:clamp(44px,6.4vw,92px);
+  margin-bottom:22px;
+}
+.hero-title .outline{
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--ink);
+}
+.hero-title .accent{color:var(--accent)}
+.hero-role{
+  font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink);line-height:1.9;margin-bottom:20px;
+}
+.hero-role strong{color:var(--accent)}
+.hero-intro{max-width:56ch;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.hero-note{
+  display:flex;align-items:center;gap:12px;
+  font-size:13.5px;color:var(--muted);max-width:52ch;
+}
+.hero-note::before{content:"";width:28px;height:1px;background:var(--line);flex:none}
+
+/* portrait */
+.hero-visual{position:relative;align-self:end}
+.portrait-frame{
+  position:relative;
+  border-radius:220px 220px 28px 28px;
+  background:linear-gradient(175deg,#FFEFD9 0%,var(--peach) 55%,#FFD3A1 100%);
+  border:1px solid rgba(221,216,207,.8);
+  aspect-ratio:4/5;
+  overflow:hidden;
+  box-shadow:0 24px 60px rgba(255,116,38,.10);
+}
+/* Placeholder — replace this whole .portrait-ph block with:
+   <img src="portrait.jpg" alt="Portrait of Fatik Rahman ..." class="portrait-img"> */
+.portrait-img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.portrait-ph{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;
+}
+.portrait-ph .monogram{
+  font-family:var(--font-head);font-size:clamp(80px,9vw,140px);
+  line-height:1;color:rgba(10,10,10,.10);letter-spacing:.02em;
+}
+.portrait-ph .ph-label{
+  font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(10,10,10,.35);
+}
+.portrait-ph::before{
+  content:"";position:absolute;inset:18px;border:1px dashed rgba(10,10,10,.15);
+  border-radius:200px 200px 16px 16px;
+}
+.hero-chip{
+  position:absolute;background:var(--white);border:1px solid var(--line);
+  border-radius:16px;padding:12px 18px;box-shadow:0 12px 30px rgba(10,10,10,.08);
+  font-size:12.5px;font-weight:700;line-height:1.35;
+}
+.hero-chip small{display:block;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.chip-1{left:-28px;bottom:22%}
+.chip-2{right:-16px;top:16%}
+
+/* ============================================================
+   AUTHORITY STRIP
+   ============================================================ */
+.authority{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
+.authority-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.authority-item{
+  padding:30px 26px;display:flex;align-items:center;gap:14px;
+  border-left:1px solid var(--line);
+  font-weight:700;font-size:15px;line-height:1.45;
+}
+.authority-item:first-child{border-left:none}
+.authority-item .num{
+  font-family:var(--font-serif);font-style:italic;font-size:26px;color:var(--accent);flex:none;
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{padding:clamp(80px,10vw,140px) 0}
+.about-head .h-display{font-size:clamp(38px,5vw,72px);max-width:14ch}
+.about-head .h-display em{font-family:var(--font-serif);font-style:italic;text-transform:none;color:var(--accent);letter-spacing:0}
+.about-grid{
+  display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
+  gap:clamp(32px,5vw,72px);margin-top:clamp(36px,4vw,56px);align-items:start;
+}
+.about-copy p{margin-bottom:20px;color:#3a3733;font-size:clamp(15.5px,1.2vw,17.5px)}
+.about-copy p:first-of-type::first-letter{
+  font-family:var(--font-serif);font-size:3.1em;float:left;line-height:.85;
+  padding-right:10px;color:var(--accent);
+}
+.profile-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:34px 32px;position:sticky;top:110px;
+}
+.profile-card h3{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  font-size:26px;margin-bottom:20px;
+}
+.profile-card dl{display:grid;gap:0}
+.profile-card .row{
+  display:grid;grid-template-columns:110px 1fr;gap:14px;
+  padding:14px 0;border-top:1px solid var(--line);
+}
+.profile-card dt{font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.profile-card dd{font-size:14.5px;font-weight:600;line-height:1.55}
+
+/* ============================================================
+   EXPERTISE
+   ============================================================ */
+.expertise{padding:clamp(80px,10vw,140px) 0;background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.expertise-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,60px)}
+.expertise-head .h-display{font-size:clamp(38px,5vw,72px)}
+.expertise-head .serif-i{font-size:clamp(20px,2vw,26px);color:var(--muted);max-width:34ch}
+.services{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);border-left:1px solid var(--line);
+}
+.service{
+  position:relative;padding:38px 32px 42px;
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:transparent;
+  transition:background .35s ease,transform .35s ease;
+}
+.service:hover{background:var(--white);transform:translateY(-4px)}
+.service .s-num{
+  font-family:var(--font-serif);font-style:italic;font-size:20px;color:var(--accent);
+  display:block;margin-bottom:56px;
+}
+.service h3{
+  font-family:var(--font-head);font-weight:400;text-transform:uppercase;
+  font-size:clamp(20px,1.8vw,25px);line-height:1.1;margin-bottom:14px;letter-spacing:.02em;
+}
+.service p{font-size:14.5px;color:var(--muted)}
+.service::after{
+  content:"";position:absolute;left:32px;right:32px;bottom:0;height:2px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s ease;
+}
+.service:hover::after{transform:scaleX(1)}
+
+/* ============================================================
+   JOURNEY / TIMELINE
+   ============================================================ */
+.journey{padding:clamp(80px,10vw,140px) 0}
+.journey-head .h-display{font-size:clamp(36px,5vw,70px);max-width:16ch}
+.journey-head .h-display em{font-family:var(--font-serif);font-style:italic;text-transform:none;letter-spacing:0;color:var(--accent)}
+.timeline{
+  position:relative;margin-top:clamp(44px,5vw,72px);
+  padding-left:clamp(28px,4vw,48px);
+}
+.timeline::before{
+  content:"";position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:var(--line);
+}
+.timeline .progress{
+  position:absolute;left:8px;top:6px;width:1px;background:var(--accent);
+  height:0;transition:height .2s linear;
+}
+.t-item{
+  position:relative;padding:0 0 clamp(36px,4vw,52px);
+  display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:clamp(18px,3vw,48px);
+}
+.t-item:last-child{padding-bottom:0}
+.t-item::before{
+  content:"";position:absolute;left:calc(-1*clamp(28px,4vw,48px) + 3.5px);top:10px;
+  width:10px;height:10px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--line);
+  transition:background .4s ease,border-color .4s ease,box-shadow .4s ease;
+}
+.t-item.in::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 5px rgba(255,116,38,.14)}
+.t-year{
+  font-family:var(--font-head);font-size:clamp(24px,2.6vw,36px);
+  line-height:1.05;text-transform:uppercase;color:var(--ink);
+}
+.t-year small{display:block;font-family:var(--font-serif);font-style:italic;font-size:.55em;color:var(--accent);text-transform:none;margin-top:4px}
+.t-body{font-size:15.5px;color:#3a3733;max-width:64ch;padding-top:4px}
+
+/* ============================================================
+   UPWORK SUCCESS
+   ============================================================ */
+.upwork{
+  padding:clamp(80px,10vw,140px) 0;
+  background:linear-gradient(160deg,var(--bg-soft) 0%,#FFF3E2 100%);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.upwork-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(36px,6vw,90px);align-items:center}
+.upwork-big{
+  font-family:var(--font-head);text-transform:uppercase;
+  font-size:clamp(64px,9.5vw,150px);line-height:.9;
+}
+.upwork-big .plus{color:var(--accent)}
+.upwork-big .sub{
+  display:block;font-family:var(--font-serif);font-style:italic;text-transform:none;
+  font-size:clamp(18px,1.8vw,26px);color:var(--muted);margin-top:18px;letter-spacing:0;line-height:1.4;
+}
+.upwork-content h3{
+  font-family:var(--font-head);font-weight:400;text-transform:uppercase;
+  font-size:clamp(24px,2.6vw,38px);line-height:1.05;margin-bottom:22px;
+}
+.upwork-content p{margin-bottom:18px;color:#3a3733;font-size:15.5px}
+.pullquote{
+  margin-top:28px;padding:26px 30px;
+  background:var(--white);border-left:3px solid var(--accent);
+  border-radius:0 var(--radius-md) var(--radius-md) 0;
+  font-family:var(--font-serif);font-style:italic;font-size:clamp(19px,1.8vw,24px);
+  line-height:1.5;color:var(--ink);
+}
+
+/* ============================================================
+   MENTORSHIP
+   ============================================================ */
+.mentorship{padding:clamp(80px,10vw,140px) 0}
+.mentorship-head .h-display{font-size:clamp(34px,4.6vw,64px);max-width:18ch}
+.mentorship-intro{margin-top:26px;max-width:70ch}
+.mentorship-intro p{margin-bottom:16px;color:#3a3733;font-size:15.5px}
+.mentor-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:12px;
+  margin-top:clamp(36px,4vw,56px);
+}
+.mentor-tile{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:22px 18px;font-size:13.5px;font-weight:700;line-height:1.4;
+  display:flex;flex-direction:column;gap:14px;
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.mentor-tile:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 30px rgba(10,10,10,.06)}
+.mentor-tile i{
+  font-style:normal;font-family:var(--font-serif);font-size:15px;color:var(--accent);
+}
+.mentor-cta{
+  margin-top:clamp(40px,5vw,64px);
+  background:var(--ink);color:var(--white);border-radius:var(--radius-lg);
+  padding:clamp(36px,5vw,64px);
+  display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:32px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.mentor-cta::before{
+  content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,116,38,.35) 0%,rgba(255,116,38,0) 70%);
+}
+.mentor-cta h3{
+  font-family:var(--font-head);font-weight:400;text-transform:uppercase;
+  font-size:clamp(26px,3.2vw,44px);line-height:1;margin-bottom:12px;
+}
+.mentor-cta h3 em{font-family:var(--font-serif);font-style:italic;text-transform:none;color:var(--accent);letter-spacing:0}
+.mentor-cta p{color:rgba(255,255,255,.75);font-size:15px;max-width:52ch}
+.mentor-cta .btn{position:relative;z-index:1}
+
+/* ============================================================
+   EDUCATION
+   ============================================================ */
+.education{padding:clamp(80px,10vw,140px) 0;background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.edu-grid{
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+  gap:clamp(32px,5vw,72px);margin-top:clamp(36px,4vw,56px);align-items:start;
+}
+.edu-cards{display:grid;gap:22px}
+.edu-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:clamp(30px,3.5vw,46px);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.edu-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(10,10,10,.06)}
+.edu-card .edu-tag{
+  display:inline-block;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.edu-card h3{
+  font-family:var(--font-head);font-weight:400;text-transform:uppercase;
+  font-size:clamp(22px,2.4vw,34px);line-height:1.05;margin-bottom:10px;
+}
+.edu-card .edu-meta{
+  font-family:var(--font-serif);font-style:italic;font-size:18px;color:var(--muted);margin-bottom:14px;
+}
+.edu-card p{font-size:15px;color:#3a3733}
+.map-card{
+  background:var(--ink);border-radius:var(--radius-lg);padding:34px 30px;
+  color:var(--white);position:sticky;top:110px;
+}
+.map-card h4{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  font-size:24px;margin-bottom:6px;
+}
+.map-card .map-sub{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:22px}
+.map-svg{width:100%;height:auto;margin-bottom:20px}
+.map-list{display:flex;flex-wrap:wrap;gap:8px}
+.map-list li{
+  font-size:12.5px;font-weight:700;letter-spacing:.06em;
+  border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 15px;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.map-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* ============================================================
+   ENTREPRENEURSHIP
+   ============================================================ */
+.venture{padding:clamp(80px,10vw,140px) 0}
+.venture-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(36px,5vw,80px);align-items:start}
+.venture-left .h-display{font-size:clamp(34px,4.6vw,62px);max-width:12ch}
+.venture-left .h-display em{font-family:var(--font-serif);font-style:italic;text-transform:none;color:var(--accent);letter-spacing:0}
+.venture-copy p{margin-bottom:18px;color:#3a3733;font-size:15.5px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.tags li{
+  font-size:13px;font-weight:700;
+  background:var(--white);border:1px solid var(--line);border-radius:999px;
+  padding:9px 20px;transition:border-color .25s ease,color .25s ease,transform .25s ease;
+}
+.tags li:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* ============================================================
+   VISION
+   ============================================================ */
+.vision{
+  padding:clamp(90px,12vw,170px) 0;
+  background:
+    radial-gradient(1000px 500px at 20% 0%,#FFEFD9 0%,rgba(255,239,217,0) 60%),
+    var(--peach);
+  border-top:1px solid var(--line);
+  overflow:hidden;
+}
+.vision .section-label{color:#8a6a45}
+.vision-statement{
+  font-size:clamp(40px,6.4vw,96px);
+  max-width:14ch;margin-bottom:clamp(32px,4vw,52px);
+}
+.vision-statement em{
+  font-family:var(--font-serif);font-style:italic;text-transform:none;
+  color:var(--accent);letter-spacing:0;
+}
+.vision-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.vision-copy p{margin-bottom:18px;font-size:15.5px;color:#4a4034}
+.mission-quote{
+  font-family:var(--font-serif);font-style:italic;
+  font-size:clamp(24px,2.6vw,36px);line-height:1.4;color:var(--ink);
+  border-left:3px solid var(--accent);padding-left:28px;
+}
+.mission-quote footer{
+  font-family:var(--font-body);font-style:normal;font-size:13px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:#8a6a45;margin-top:18px;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta{background:var(--ink);color:var(--white);padding:clamp(90px,11vw,150px) 0;overflow:hidden}
+.cta-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(40px,6vw,90px);align-items:center}
+.final-cta .section-label{color:rgba(255,255,255,.55)}
+.final-cta .section-label::before{background:var(--accent)}
+.cta-title{
+  font-size:clamp(36px,5vw,74px);margin-bottom:24px;max-width:16ch;
+}
+.cta-title em{font-family:var(--font-serif);font-style:italic;text-transform:none;color:var(--accent);letter-spacing:0}
+.cta-text{color:rgba(255,255,255,.72);font-size:16px;max-width:56ch;margin-bottom:36px}
+.cta-actions{display:flex;flex-wrap:wrap;gap:14px}
+.cta-portrait{
+  border-radius:200px 200px 24px 24px;
+  background:linear-gradient(175deg,#2a2a2a 0%,#1a1a1a 100%);
+  border:1px solid rgba(255,255,255,.12);
+  aspect-ratio:4/5;position:relative;overflow:hidden;
+}
+.cta-portrait .portrait-ph .monogram{color:rgba(255,255,255,.08)}
+.cta-portrait .portrait-ph .ph-label{color:rgba(255,255,255,.3)}
+.cta-portrait .portrait-ph::before{border-color:rgba(255,255,255,.12)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{background:var(--ink);color:var(--white);border-top:1px solid rgba(255,255,255,.1);padding:clamp(56px,7vw,90px) 0 36px}
+.footer-grid{
+  display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr) minmax(0,.7fr);
+  gap:clamp(32px,5vw,72px);padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.12);
+}
+.footer-brand .logo{font-size:36px;margin-bottom:16px;display:inline-block}
+.footer-brand p{color:rgba(255,255,255,.65);font-size:14.5px;max-width:40ch}
+.footer-col h4{
+  font-size:11.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);margin-bottom:18px;
+}
+.footer-col ul{display:grid;gap:10px}
+.footer-col a{
+  font-size:14.5px;font-weight:600;color:rgba(255,255,255,.85);
+  transition:color .25s ease;position:relative;
+}
+.footer-col a:hover{color:var(--accent)}
+.footer-col .soon{
+  font-size:11px;font-weight:600;color:rgba(255,255,255,.35);margin-left:8px;letter-spacing:.06em;
+}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  padding-top:28px;font-size:13px;color:rgba(255,255,255,.5);
+}
+.back-top{
+  display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--white);
+  transition:color .25s ease;
+}
+.back-top:hover{color:var(--accent)}
+.back-top .up{transition:transform .25s ease}
+.back-top:hover .up{transform:translateY(-3px)}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1080px){
+  .mentor-grid{grid-template-columns:repeat(3,1fr)}
+  .services{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:960px){
+  .hero{padding-top:120px}
+  .hero-grid{grid-template-columns:1fr;align-items:start}
+  .hero-copy{order:1;padding-bottom:0}
+  .hero-visual{order:2;max-width:440px;margin:48px auto 0}
+  .chip-1{left:-8px}
+  .chip-2{right:-8px}
+  .authority-grid{grid-template-columns:1fr 1fr}
+  .authority-item:nth-child(3){border-left:none}
+  .authority-item:nth-child(n+3){border-top:1px solid var(--line)}
+  .about-grid,.edu-grid,.venture-grid,.upwork-grid,.vision-grid,.cta-grid{grid-template-columns:1fr}
+  .profile-card,.map-card{position:static}
+  .mentor-cta{grid-template-columns:1fr;justify-items:start}
+  .cta-portrait{max-width:420px;margin:0 auto;width:100%}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+}
+@media (max-width:640px){
+  .services{grid-template-columns:1fr}
+  .mentor-grid{grid-template-columns:1fr 1fr}
+  .t-item{grid-template-columns:1fr;gap:8px}
+  .hero-actions .btn{width:100%}
+  .cta-actions .btn{width:100%}
+  .mentor-cta .btn{width:100%}
+  .authority-grid{grid-template-columns:1fr}
+  .authority-item{border-left:none;border-top:1px solid var(--line)}
+  .authority-item:first-child{border-top:none}
+  .profile-card .row{grid-template-columns:1fr;gap:2px}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-chip{position:static;display:inline-block;margin:10px 8px 0 0}
+  .hero-chips-mobile{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#home" class="logo" aria-label="Fatik Rahman — home">Fatik<span>.</span></a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#mentorship">Mentorship</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-dark header-cta">Book a Call</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="home">
+
+<!-- ================= HERO ================= -->
+<section class="hero" aria-label="Introduction">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="badge reveal"><span class="dot" aria-hidden="true"></span> Available for projects and mentorship</p>
+      <p class="hero-hi reveal reveal-d1">Hey, I’m <em>Fatik</em> —</p>
+      <h1 class="h-display hero-title reveal reveal-d1">
+        I help people turn <span class="outline">skills</span> into <span class="accent">opportunities.</span>
+      </h1>
+      <p class="hero-role reveal reveal-d2">
+        Top Rated Plus Upwork Freelancer<br>
+        <strong>Upwork Coach &amp; Digital Business Strategist</strong>
+      </p>
+      <p class="hero-intro lead reveal reveal-d2">
+        An entrepreneur, web developer, and freelancing mentor with nearly eight years of practical
+        experience in client acquisition, international freelancing, digital business development,
+        and online entrepreneurship.
+      </p>
+      <div class="hero-actions reveal reveal-d3">
+        <a href="#contact" class="btn btn-dark">Work With Me <span class="arrow" aria-hidden="true">→</span></a>
+        <a href="#journey" class="btn btn-outline">Explore My Journey</a>
+      </div>
+      <p class="hero-note reveal reveal-d3">
+        Working with businesses and professionals across India, the United States, Europe,
+        and the United Arab Emirates.
+      </p>
+    </div>
+
+    <div class="hero-visual reveal reveal-d2">
+      <figure class="portrait-frame">
+        <img class="portrait-img" src="images/fatik-portrait.jpg" width="1200" height="1600"
+             fetchpriority="high"
+             alt="Fatik Rahman, Top Rated Plus Upwork Freelancer and Freelancing Mentor, smiling in a beige blazer">
+      </figure>
+      <p class="hero-chip chip-1"><small>Since 2018</small>Nearly 8 years of experience</p>
+      <p class="hero-chip chip-2"><small>Upwork</small>Top Rated Plus</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUTHORITY STRIP ================= -->
+<section class="authority" aria-label="Highlights">
+  <div class="wrap">
+    <div class="authority-grid">
+      <div class="authority-item reveal"><span class="num" aria-hidden="true">01</span> Nearly 8 Years of Practical Experience</div>
+      <div class="authority-item reveal reveal-d1"><span class="num" aria-hidden="true">02</span> Top Rated Plus on Upwork</div>
+      <div class="authority-item reveal reveal-d2"><span class="num" aria-hidden="true">03</span> International Client Experience</div>
+      <div class="authority-item reveal reveal-d3"><span class="num" aria-hidden="true">04</span> Freelancer, Mentor and Entrepreneur</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-head reveal">
+      <p class="section-label">01 / About</p>
+      <h2 class="h-display">Building a career <em>beyond borders</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>Fatik Rahman is an Indian entrepreneur, Top Rated Plus Upwork Freelancer, Upwork Coach, Freelancing Mentor, Web Developer, and Digital Business Strategist.</p>
+        <p>He began his professional journey while continuing his education and developed an early interest in websites, technology, and online business. What began as curiosity gradually became a full-time freelancing career.</p>
+        <p>Over the years, he has worked with startups, small businesses, entrepreneurs, and established organisations. His experience includes web development, digital platforms, client acquisition, project management, remote team collaboration, online entrepreneurship, and professional mentoring.</p>
+        <p>Today, he helps businesses strengthen their digital presence while guiding aspiring freelancers toward building practical and sustainable careers.</p>
+      </div>
+      <aside class="profile-card reveal reveal-d1" aria-label="Profile information">
+        <h3>Profile</h3>
+        <dl>
+          <div class="row"><dt>Name</dt><dd>Fatik Rahman</dd></div>
+          <div class="row"><dt>Date of Birth</dt><dd>28 December 2000</dd></div>
+          <div class="row"><dt>Nationality</dt><dd>Indian</dd></div>
+          <div class="row"><dt>Current Roles</dt><dd>Freelancer, Coach, Mentor, Entrepreneur, Web Developer and Digital Business Strategist</dd></div>
+          <div class="row"><dt>Experience</dt><dd>Nearly eight years</dd></div>
+          <div class="row"><dt>Markets</dt><dd>India, United States, Europe, United Arab Emirates and other international markets</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERTISE ================= -->
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="expertise-head reveal">
+      <div>
+        <p class="section-label">02 / Expertise</p>
+        <h2 class="h-display">I can help <br>you with</h2>
+      </div>
+      <p class="serif-i">Practical services shaped by real client work, not theory.</p>
+    </div>
+    <div class="services">
+      <article class="service reveal">
+        <span class="s-num" aria-hidden="true">01</span>
+        <h3>Upwork Coaching</h3>
+        <p>Practical guidance for creating a stronger Upwork presence, improving profile positioning, writing better proposals, communicating with clients, and building long-term platform success.</p>
+      </article>
+      <article class="service reveal reveal-d1">
+        <span class="s-num" aria-hidden="true">02</span>
+        <h3>Freelancing Mentorship</h3>
+        <p>Step-by-step support for freelancers who need direction in choosing services, finding clients, building credibility, pricing their work, and creating a sustainable career.</p>
+      </article>
+      <article class="service reveal reveal-d2">
+        <span class="s-num" aria-hidden="true">03</span>
+        <h3>Web Development</h3>
+        <p>Professional website and digital platform solutions created around real business needs, user experience, functionality, and long-term growth.</p>
+      </article>
+      <article class="service reveal">
+        <span class="s-num" aria-hidden="true">04</span>
+        <h3>Client Acquisition</h3>
+        <p>Support with lead generation, direct outreach, proposal strategy, client consultations, negotiation, and relationship development.</p>
+      </article>
+      <article class="service reveal reveal-d1">
+        <span class="s-num" aria-hidden="true">05</span>
+        <h3>Digital Business Strategy</h3>
+        <p>Helping entrepreneurs and businesses structure their online services, digital systems, positioning, and growth plans.</p>
+      </article>
+      <article class="service reveal reveal-d2">
+        <span class="s-num" aria-hidden="true">06</span>
+        <h3>Team &amp; Project Management</h3>
+        <p>Planning projects, coordinating professionals, managing communication, and building systems that support larger digital projects.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNEY ================= -->
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="journey-head reveal">
+      <p class="section-label">03 / Journey</p>
+      <h2 class="h-display">From student to <em>global freelancer</em></h2>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="progress" id="timelineProgress" aria-hidden="true"></div>
+
+      <div class="t-item reveal">
+        <h3 class="t-year">2016</h3>
+        <p class="t-body">Completed high school and qualified for Diploma Engineering at Aligarh Muslim University.</p>
+      </div>
+      <div class="t-item reveal">
+        <h3 class="t-year">2016–19 <small>Foundations</small></h3>
+        <p class="t-body">Studied Diploma Engineering at Aligarh Muslim University. During this period, he developed a strong interest in technology, websites, digital tools, and practical business solutions.</p>
+      </div>
+      <div class="t-item reveal">
+        <h3 class="t-year">Jan 2019 <small>First steps</small></h3>
+        <p class="t-body">Joined APPOINTPANDA as an intern while completing his diploma. The role gave him practical exposure to professional web development, project management, client communication, and international business expectations.</p>
+      </div>
+      <div class="t-item reveal">
+        <h3 class="t-year">2019</h3>
+        <p class="t-body">Completed his Diploma Engineering and chose to build an independent freelancing career instead of following a traditional employment path.</p>
+      </div>
+      <div class="t-item reveal">
+        <h3 class="t-year">2019–20 <small>Going independent</small></h3>
+        <p class="t-body">Started working with local clients in Aligarh and gradually expanded to Delhi, Mumbai, Bangalore, Hyderabad, Chennai, Kolkata, and other Indian business markets.</p>
+      </div>
+      <div class="t-item reveal">
+        <h3 class="t-year">2020</h3>
+        <p class="t-body">Used digital advertising, social media lead generation, direct communication, and virtual consultations to reach international clients during the COVID period.</p>
+      </div>
+      <div class="t-item reveal">
+        <h3 class="t-year">2021 <small>Moving abroad</small></h3>
+        <p class="t-body">Moved to Warsaw, Poland, after gaining admission to Vistula University for a Bachelor’s degree in Computer Engineering.</p>
+      </div>
+      <div class="t-item reveal">
+        <h3 class="t-year">2021–25</h3>
+        <p class="t-body">Continued building his freelancing business while studying in Europe. During this period, his international client experience expanded across Europe, the United States, the UAE, and other markets.</p>
+      </div>
+      <div class="t-item reveal">
+        <h3 class="t-year">2023 <small>Upwork era</small></h3>
+        <p class="t-body">Expanded his professional activities to Upwork. His previous experience in client psychology, proposal writing, communication, and project delivery helped him build a strong position on the platform.</p>
+      </div>
+      <div class="t-item reveal">
+        <h3 class="t-year">2025</h3>
+        <p class="t-body">Completed his Bachelor’s degree in Computer Engineering at Vistula University.</p>
+      </div>
+      <div class="t-item reveal">
+        <h3 class="t-year">Today <small>Present day</small></h3>
+        <p class="t-body">Works as a Top Rated Plus Upwork Freelancer, Upwork Coach, Freelancing Mentor, Entrepreneur, Web Developer, and Digital Business Strategist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= UPWORK SUCCESS ================= -->
+<section class="upwork" aria-label="Upwork success">
+  <div class="wrap upwork-grid">
+    <div class="reveal">
+      <h2 class="upwork-big">Top<br>Rated<br><span class="plus">Plus</span>
+        <span class="sub">— earned on Upwork through consistent, professional delivery.</span>
+      </h2>
+    </div>
+    <div class="upwork-content reveal reveal-d1">
+      <h3>Built through experience, <span style="color:var(--accent)">not theory</span></h3>
+      <p>Fatik entered Upwork after already gaining several years of experience through direct client work. He understood client communication, proposal strategy, project execution, business development, and long-term relationship building before expanding onto the platform.</p>
+      <p>His consistent delivery, professional communication, and ability to manage long-term and high-value projects helped him achieve Top Rated Plus status.</p>
+      <p>His experience also includes working behind the scenes on multiple Upwork profiles, supporting opportunity generation, proposal strategy, client communication, and project acquisition.</p>
+      <blockquote class="pullquote">
+        “Successful freelancing is not only about having a skill. It is about learning how to position, communicate, deliver, and grow.”
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MENTORSHIP ================= -->
+<section class="mentorship" id="mentorship">
+  <div class="wrap">
+    <div class="mentorship-head reveal">
+      <p class="section-label">04 / Mentorship</p>
+      <h2 class="h-display">Practical guidance for real freelancing careers</h2>
+      <div class="mentorship-intro">
+        <p>After years of practical client work, Fatik began receiving questions from aspiring freelancers who wanted help with starting, finding clients, writing proposals, building trust, and creating consistent income.</p>
+        <p>He recognised that many skilled people struggle because they lack direction, strategy, and real-world guidance. This led him to expand his work as an Upwork Coach and Freelancing Mentor.</p>
+      </div>
+    </div>
+
+    <ul class="mentor-grid" aria-label="Mentoring areas">
+      <li class="mentor-tile reveal"><i aria-hidden="true">01</i>Upwork profile positioning</li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">02</i>Proposal writing</li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">03</i>Client acquisition</li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">04</i>Personal branding</li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">05</i>Service selection</li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">06</i>Client communication</li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">07</i>Pricing and negotiation</li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">08</i>Business development</li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">09</i>Long-term career planning</li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">10</i>Freelancing systems and processes</li>
+    </ul>
+
+    <div class="mentor-cta reveal">
+      <div>
+        <h3>Ready to build your <em>freelancing career?</em></h3>
+        <p>Get practical guidance based on real client work, platform experience, and international freelancing.</p>
+      </div>
+      <a href="#contact" class="btn btn-orange">Request Mentorship <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="education" id="education">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="section-label">05 / Education</p>
+      <h2 class="h-display" style="font-size:clamp(34px,4.6vw,64px)">Education &amp; <em class="serif-i" style="text-transform:none;color:var(--accent);letter-spacing:0">global experience</em></h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-cards">
+        <article class="edu-card reveal">
+          <span class="edu-tag">Diploma Engineering · 2016–2019</span>
+          <h3>Aligarh Muslim University</h3>
+          <p class="edu-meta">Aligarh, India</p>
+          <p>His time at Aligarh Muslim University introduced him to the practical potential of technology, web development, and digital business solutions.</p>
+        </article>
+        <article class="edu-card reveal reveal-d1">
+          <span class="edu-tag">B.Sc. Computer Engineering · 2021–2025</span>
+          <h3>Vistula University, Warsaw</h3>
+          <p class="edu-meta">Warsaw, Poland</p>
+          <p>Studying in Poland gave him wider exposure to international cultures, professional environments, global business practices, and international networks.</p>
+        </article>
+      </div>
+      <aside class="map-card reveal reveal-d2" aria-label="Markets and locations">
+        <h4>A global footprint</h4>
+        <p class="map-sub">Studied, worked, and collaborated across markets.</p>
+        <svg class="map-svg" viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract world map highlighting India, Poland, the United States, Europe, and the United Arab Emirates">
+          <g fill="none" stroke="rgba(255,255,255,.16)" stroke-width="1">
+            <ellipse cx="160" cy="85" rx="150" ry="72"/>
+            <ellipse cx="160" cy="85" rx="150" ry="40"/>
+            <ellipse cx="160" cy="85" rx="105" ry="72"/>
+            <ellipse cx="160" cy="85" rx="45" ry="72"/>
+            <line x1="10" y1="85" x2="310" y2="85"/>
+          </g>
+          <g stroke="rgba(255,116,38,.45)" stroke-width="1" stroke-dasharray="3 4" fill="none">
+            <path d="M70 62 Q 120 20 168 52"/>
+            <path d="M168 52 Q 190 70 214 95"/>
+            <path d="M168 52 Q 180 72 196 78"/>
+            <path d="M160 58 Q 164 54 168 52"/>
+          </g>
+          <g>
+            <circle cx="70" cy="62" r="4.5" fill="#FF7426"/>
+            <circle cx="70" cy="62" r="8.5" fill="none" stroke="rgba(255,116,38,.4)"/>
+            <circle cx="168" cy="52" r="4.5" fill="#FF7426"/>
+            <circle cx="168" cy="52" r="8.5" fill="none" stroke="rgba(255,116,38,.4)"/>
+            <circle cx="160" cy="58" r="3" fill="#FFE1BD"/>
+            <circle cx="196" cy="78" r="4.5" fill="#FF7426"/>
+            <circle cx="196" cy="78" r="8.5" fill="none" stroke="rgba(255,116,38,.4)"/>
+            <circle cx="214" cy="95" r="4.5" fill="#FF7426"/>
+            <circle cx="214" cy="95" r="8.5" fill="none" stroke="rgba(255,116,38,.4)"/>
+          </g>
+          <g fill="rgba(255,255,255,.85)" font-family="Manrope,sans-serif" font-size="9" font-weight="700">
+            <text x="42" y="48">United States</text>
+            <text x="150" y="38">Poland</text>
+            <text x="128" y="72">Europe</text>
+            <text x="204" y="72">UAE</text>
+            <text x="224" y="108">India</text>
+          </g>
+        </svg>
+        <ul class="map-list">
+          <li>India</li>
+          <li>Poland</li>
+          <li>United States</li>
+          <li>Europe</li>
+          <li>United Arab Emirates</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENTREPRENEURSHIP ================= -->
+<section class="venture" id="entrepreneurship">
+  <div class="wrap venture-grid">
+    <div class="venture-left reveal">
+      <p class="section-label">06 / Entrepreneurship</p>
+      <h2 class="h-display">From individual freelancer to <em>team builder</em></h2>
+    </div>
+    <div class="venture-copy reveal reveal-d1">
+      <p>As his professional activities expanded, Fatik gradually evolved from an individual freelancer into an entrepreneur and team builder.</p>
+      <p>He has collaborated with professionals from web development, mobile application development, digital marketing, search engine optimisation, content creation, design, and business operations.</p>
+      <p>This experience has helped him build systems that combine technical knowledge, client acquisition, project management, service delivery, and business growth.</p>
+      <p>His focus now extends beyond individual projects toward building scalable opportunities through technology, education, mentoring, and digital business.</p>
+      <ul class="tags" aria-label="Skills">
+        <li>Web Development</li>
+        <li>Digital Strategy</li>
+        <li>Client Acquisition</li>
+        <li>Project Management</li>
+        <li>Remote Teams</li>
+        <li>Mentoring</li>
+        <li>Entrepreneurship</li>
+        <li>Business Systems</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISION ================= -->
+<section class="vision" id="vision">
+  <div class="wrap">
+    <p class="section-label reveal">07 / Vision</p>
+    <h2 class="h-display vision-statement reveal">Freelancing can create opportunities <em>without borders.</em></h2>
+    <div class="vision-grid">
+      <div class="vision-copy reveal">
+        <p>Fatik believes people should not be limited by geography, traditional employment structures, or economic circumstances.</p>
+        <p>His long-term vision is to build businesses, technology ventures, educational platforms, and professional communities that help more people participate in the global digital economy.</p>
+        <p>Through his work as an entrepreneur, freelancer, coach, and mentor, he aims to inspire freelancers, creators, and business owners to pursue independence, continuous learning, and long-term growth.</p>
+      </div>
+      <blockquote class="mission-quote reveal reveal-d1">
+        “Helping people turn their skills into opportunities and build meaningful careers in a connected world.”
+        <footer>The mission</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final-cta" id="contact">
+  <div class="wrap cta-grid">
+    <div>
+      <p class="section-label reveal">Let’s build something meaningful</p>
+      <h2 class="h-display cta-title reveal">Have a project, business idea, or <em>freelancing goal?</em></h2>
+      <p class="cta-text reveal reveal-d1">Connect with Fatik for web development, digital business strategy, Upwork coaching, freelancing mentorship, or professional collaboration.</p>
+      <div class="cta-actions reveal reveal-d2">
+        <a href="#contact" class="btn btn-orange">Book a Consultation <span class="arrow" aria-hidden="true">→</span></a>
+        <a href="#contact" class="btn btn-white-outline">Send an Enquiry</a>
+      </div>
+    </div>
+    <figure class="cta-portrait reveal reveal-d1" role="img" aria-label="Close-up portrait of Fatik Rahman">
+      <!-- Replace this placeholder with:
+           <img class="portrait-img" src="images/fatik-portrait-2.jpg"
+                alt="Close-up portrait of Fatik Rahman"> -->
+      <div class="portrait-ph" aria-hidden="true">
+        <span class="monogram">FR</span>
+        <span class="ph-label">Portrait — Fatik Rahman</span>
+      </div>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">Fatik<span>.</span></a>
+        <p>Freelancer, mentor, entrepreneur, and digital business strategist helping people and businesses turn ideas and skills into opportunities.</p>
+      </div>
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#mentorship">Mentorship</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <!-- Add real profile URLs here when available. Links are intentionally
+               not invented — replace the spans with <a href="..."> when provided. -->
+          <li><span style="color:rgba(255,255,255,.85);font-weight:600;font-size:14.5px">Upwork</span><span class="soon">link coming soon</span></li>
+          <li><span style="color:rgba(255,255,255,.85);font-weight:600;font-size:14.5px">LinkedIn</span><span class="soon">link coming soon</span></li>
+          <li><span style="color:rgba(255,255,255,.85);font-weight:600;font-size:14.5px">Instagram</span><span class="soon">link coming soon</span></li>
+          <li><span style="color:rgba(255,255,255,.85);font-weight:600;font-size:14.5px">YouTube</span><span class="soon">link coming soon</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Fatik Rahman. All rights reserved.</p>
+      <a href="#home" class="back-top">Back to Top <span class="up" aria-hidden="true">↑</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  document.documentElement.classList.add("js");
+
+  /* Sticky header state */
+  var header = document.getElementById("siteHeader");
+  var onScrollHeader = function(){
+    header.classList.toggle("scrolled", window.scrollY > 24);
+  };
+  window.addEventListener("scroll", onScrollHeader, {passive:true});
+  onScrollHeader();
+
+  /* Mobile menu */
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("mainNav");
+  toggle.addEventListener("click", function(){
+    var open = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+  nav.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded","false");
+      document.body.style.overflow = "";
+    }
+  });
+
+  /* Reveal on scroll */
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealEls = document.querySelectorAll(".reveal, .t-item");
+  if(reduced || !("IntersectionObserver" in window)){
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12, rootMargin:"0px 0px -6% 0px"});
+    revealEls.forEach(function(el){ io.observe(el); });
+  }
+
+  /* Timeline progress line */
+  var timeline = document.getElementById("timeline");
+  var progress = document.getElementById("timelineProgress");
+  if(timeline && progress){
+    var onScrollTimeline = function(){
+      var rect = timeline.getBoundingClientRect();
+      var viewH = window.innerHeight;
+      var total = rect.height;
+      var passed = Math.min(Math.max(viewH * .72 - rect.top, 0), total);
+      progress.style.height = passed + "px";
+    };
+    window.addEventListener("scroll", onScrollTimeline, {passive:true});
+    window.addEventListener("resize", onScrollTimeline);
+    onScrollTimeline();
+  }
+})();
+</script>
+</body>
+</html>
