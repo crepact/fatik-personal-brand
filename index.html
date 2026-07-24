@@ -259,6 +259,10 @@ html.js .reveal.in{opacity:1;transform:none}
   overflow:hidden;
   box-shadow:0 24px 60px rgba(255,116,38,.10);
 }
+/* desktop: taller frame so the portrait rises into the free space beside the headline */
+@media (min-width:961px){
+  .portrait-frame{aspect-ratio:5/8}
+}
 /* Placeholder — replace this whole .portrait-ph block with:
    <img src="portrait.jpg" alt="Portrait of Fatik Rahman ..." class="portrait-img"> */
 .portrait-img{width:100%;height:100%;object-fit:cover;object-position:top center}
