@@ -1,0 +1,7 @@
+# Fatik Rahman — personal brand website
+# All search engines and AI crawlers are welcome.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://crepact.github.io/fatik-personal-brand/sitemap.xml
