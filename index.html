@@ -762,6 +762,9 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
   opacity:0;transition:opacity .25s ease;
   overflow-y:auto;
 }
+/* author display:flex would otherwise override the [hidden] attribute,
+   leaving an invisible click-blocking overlay across the whole page */
+.modal-backdrop[hidden]{display:none}
 .modal-backdrop.open{opacity:1}
 .modal{
   position:relative;
