@@ -1450,8 +1450,10 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
         <label for="cfMessage">Your message</label>
         <textarea id="cfMessage" name="message" rows="4" required placeholder="Tell me about your project, business idea, or freelancing goal…"></textarea>
       </div>
-      <!-- honeypot: bots fill it, humans never see it -->
-      <input type="text" name="company_website" id="cfHoney" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <!-- honeypot: bots fill it, humans never see it. The name is deliberately
+           meaningless so browser autofill never touches it (a recognisable name
+           like company_website gets autofilled and silently blocks real users) -->
+      <input type="text" name="xq_verify_zz" id="cfHoney" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <p class="form-error" id="formError" hidden></p>
       <button type="submit" class="btn btn-orange modal-submit" id="formSubmit">Send Message <span class="arrow" aria-hidden="true">→</span></button>
@@ -1497,6 +1499,7 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
     form.hidden = false;
     success.hidden = true;
     errBox.hidden = true;
+    document.getElementById("cfHoney").value = ""; /* clear any autofill spill */
     var sel = document.getElementById("cfTopic");
     if(topic){
       for(var i=0;i<sel.options.length;i++){
@@ -1578,12 +1581,12 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
         page: location.href
       })
     }).then(function(res){
-      if(!res.ok) throw new Error("HTTP " + res.status);
+      if(!res.ok) throw new Error("error " + res.status);
       form.hidden = true;
       success.hidden = false;
       form.reset();
-    }).catch(function(){
-      errBox.textContent = "Something went wrong sending your message. Please try again, or reach out on Upwork or LinkedIn.";
+    }).catch(function(err){
+      errBox.textContent = "Something went wrong sending your message (" + (err && err.message ? err.message : "network") + "). Please try again, or reach out on Upwork or LinkedIn.";
       errBox.hidden = false;
     }).finally(function(){
       submitBtn.disabled = false;
