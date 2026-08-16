@@ -28,12 +28,12 @@ create policy "anyone can submit an enquiry"
 -- Lead status workflow used by the admin dashboard (new / contacted / closed)
 alter table public.enquiries add column if not exists status text not null default 'new';
 
--- Admin-only read/update for the dashboard (replace the email if it changes)
+-- Admin-only read/update for the dashboard (adjust the email list as needed)
 create policy "admin can read enquiries"
   on public.enquiries for select to authenticated
-  using ((auth.jwt()->>'email') = 'magnolia.ads2025@gmail.com');
+  using ((auth.jwt()->>'email') in ('magnolia.ads2025@gmail.com','fatikrhman@gmail.com'));
 
 create policy "admin can update enquiries"
   on public.enquiries for update to authenticated
-  using ((auth.jwt()->>'email') = 'magnolia.ads2025@gmail.com')
-  with check ((auth.jwt()->>'email') = 'magnolia.ads2025@gmail.com');
+  using ((auth.jwt()->>'email') in ('magnolia.ads2025@gmail.com','fatikrhman@gmail.com'))
+  with check ((auth.jwt()->>'email') in ('magnolia.ads2025@gmail.com','fatikrhman@gmail.com'));

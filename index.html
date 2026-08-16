@@ -813,7 +813,36 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
   font-size:10px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;
 }
 .cc-btn{position:relative;z-index:1;width:100%}
-@media (max-width:960px){.course-grid{grid-template-columns:1fr}}
+.course-who{display:grid;gap:10px;margin:0 0 28px}
+.cw-item{font-size:14px;color:#3a3733;padding-left:18px;position:relative}
+.cw-item::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.cw-item em{font-family:var(--font-serif);font-style:italic;font-size:16px;color:var(--ink)}
+.course-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);border-radius:var(--radius-md);background:var(--white);
+  margin:clamp(36px,5vw,56px) 0 0;overflow:hidden;
+}
+.cs-item{
+  padding:22px 24px;font-size:13.5px;font-weight:700;color:var(--muted);
+  border-left:1px solid var(--line);display:flex;flex-direction:column;gap:2px;
+}
+.cs-item:first-child{border-left:none}
+.cs-v{font-family:var(--font-head);font-size:clamp(24px,2.4vw,34px);color:var(--ink);line-height:1.1}
+.course-sub{
+  font-family:var(--font-head);font-weight:400;text-transform:uppercase;
+  font-size:clamp(22px,2.6vw,32px);margin:clamp(36px,5vw,52px) 0 20px;
+}
+.module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;list-style:none;padding:0}
+.module-grid .mentor-tile strong{font-size:14.5px;line-height:1.35}
+.module-grid .mentor-tile span{font-size:12.5px;font-weight:600;color:var(--muted);line-height:1.5}
+@media (max-width:960px){
+  .course-grid{grid-template-columns:1fr}
+  .course-stats{grid-template-columns:1fr 1fr}
+  .cs-item:nth-child(3){border-left:none}
+  .cs-item:nth-child(n+3){border-top:1px solid var(--line)}
+  .module-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){.module-grid{grid-template-columns:1fr}}
 
 /* ============================================================
    CONTACT MODAL
@@ -1222,26 +1251,51 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
         <li><strong>6</strong> modules</li>
         <li><strong>13</strong> video lessons</li>
         <li><strong>260</strong> minutes</li>
+        <li><strong>10</strong> bonuses</li>
         <li>Lifetime access</li>
         <li>7-day money-back guarantee</li>
       </ul>
+      <div class="course-who">
+        <p class="cw-item"><em>Complete beginners</em> — you’ve never freelanced before and want a clear, honest starting point.</p>
+        <p class="cw-item"><em>Stuck freelancers</em> — you’re already trying but can’t land global clients through online platforms.</p>
+      </div>
       <div class="course-actions">
         <a href="https://buildwithfatik.com/" target="_blank" rel="noopener" class="btn btn-dark">Get the Course <span class="arrow" aria-hidden="true">↗</span></a>
         <p class="course-host">Hosted on <a href="https://buildwithfatik.com/" target="_blank" rel="noopener">buildwithfatik.com</a></p>
       </div>
     </div>
     <aside class="course-card reveal reveal-d1" aria-label="Course offer">
-      <p class="cc-label">Launch offer</p>
-      <p class="cc-price">₹199 <span>one-time · lifetime access</span></p>
+      <p class="cc-label">Launch offer · 10 bonuses included</p>
+      <p class="cc-price">₹199 <span>one-time · lifetime access · 7-day money-back guarantee</span></p>
       <ul class="cc-list">
-        <li>Freelancing fundamentals &amp; choosing your platform</li>
-        <li>Upwork profile positioning that stands out</li>
-        <li>Proposal writing &amp; client acquisition</li>
-        <li>Delivery, communication &amp; scaling</li>
-        <li>Bonus templates and resources included</li>
+        <li>Ready-to-use proposal templates pack</li>
+        <li>100 high-paying client sources list</li>
+        <li>AI tools for freelancers list</li>
+        <li>Live portfolio building workshop</li>
+        <li>Premium freelancing community access</li>
+        <li>International payment setup guide — and 4 more bonuses</li>
       </ul>
       <a href="https://buildwithfatik.com/" target="_blank" rel="noopener" class="btn btn-orange cc-btn">Start Learning <span class="arrow" aria-hidden="true">↗</span></a>
     </aside>
+  </div>
+
+  <div class="wrap">
+    <div class="course-stats reveal" aria-label="Upwork track record">
+      <div class="cs-item"><span class="cs-v">$50K+</span> earned on Upwork</div>
+      <div class="cs-item"><span class="cs-v">100%</span> Job Success rate</div>
+      <div class="cs-item"><span class="cs-v">5.0</span> Upwork rating</div>
+      <div class="cs-item"><span class="cs-v">1,345+</span> hours worked</div>
+    </div>
+
+    <h3 class="course-sub reveal">Inside the <em class="serif-i" style="color:var(--accent)">six modules</em></h3>
+    <ul class="module-grid" aria-label="Course curriculum">
+      <li class="mentor-tile reveal"><i aria-hidden="true">01</i><strong>Welcome to Your Freelancing Journey</strong><span>Freelancing as a side hustle and the top platforms compared.</span></li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">02</i><strong>Understanding Upwork</strong><span>Why Upwork works and how jobs, connects, and payments flow.</span></li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">03</i><strong>Building a Strong Foundation</strong><span>Choosing a marketable skill and creating a profile clients trust.</span></li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">04</i><strong>Winning Clients</strong><span>Proposal writing, client communication, and closing techniques.</span></li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">05</i><strong>Delivering Like a Professional</strong><span>Smart delivery and building momentum after your first job.</span></li>
+      <li class="mentor-tile reveal"><i aria-hidden="true">06</i><strong>Scaling Beyond Your First Client</strong><span>Why freelancers plateau and how to grow consistent income.</span></li>
+    </ul>
   </div>
 </section>
 
@@ -1447,6 +1501,7 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
           <option>Web Development</option>
           <option>Upwork Coaching</option>
           <option>Freelancing Mentorship</option>
+          <option>Freelancing Blueprint Course</option>
           <option>Digital Business Strategy</option>
           <option>Speaking / Collaboration</option>
           <option>Other</option>
