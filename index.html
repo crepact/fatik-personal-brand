@@ -1396,11 +1396,13 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
     form.hidden = false;
     success.hidden = true;
     errBox.hidden = true;
+    var sel = document.getElementById("cfTopic");
     if(topic){
-      var sel = document.getElementById("cfTopic");
       for(var i=0;i<sel.options.length;i++){
         if(sel.options[i].text === topic){ sel.selectedIndex = i; break; }
       }
+    } else {
+      sel.selectedIndex = 0;
     }
     requestAnimationFrame(function(){
       modal.classList.add("open");
