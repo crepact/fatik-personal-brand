@@ -82,26 +82,6 @@
       ]
     },
     {
-      "@type": "Course",
-      "@id": "https://crepact.github.io/fatik-personal-brand/#course",
-      "name": "Freelancing Blueprint",
-      "description": "A step-by-step Upwork freelancing course by Fatik Rahman covering skill selection, profile optimisation, proposal writing, client acquisition, delivery, and scaling. 6 modules, 13 video lessons, 260 minutes, lifetime access.",
-      "url": "https://buildwithfatik.com/",
-      "provider": { "@id": "https://crepact.github.io/fatik-personal-brand/#person" },
-      "offers": {
-        "@type": "Offer",
-        "price": "199",
-        "priceCurrency": "INR",
-        "url": "https://buildwithfatik.com/",
-        "availability": "https://schema.org/InStock"
-      },
-      "hasCourseInstance": {
-        "@type": "CourseInstance",
-        "courseMode": "online",
-        "courseWorkload": "PT260M"
-      }
-    },
-    {
       "@type": "WebSite",
       "@id": "https://crepact.github.io/fatik-personal-brand/#website",
       "url": "https://crepact.github.io/fatik-personal-brand/",
@@ -850,10 +830,11 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
 .modal-backdrop{
   position:fixed;inset:0;z-index:200;
   background:rgba(10,10,10,.55);
-  display:flex;align-items:center;justify-content:center;
-  padding:20px;
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:16px;
   opacity:0;transition:opacity .25s ease;
   overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
 }
 /* author display:flex would otherwise override the [hidden] attribute,
    leaving an invisible click-blocking overlay across the whole page */
@@ -865,9 +846,10 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
   border:1px solid var(--line);
   border-radius:var(--radius-lg);
   width:min(520px,100%);
-  max-height:calc(100vh - 40px);
-  overflow-y:auto;
-  padding:clamp(28px,4vw,44px);
+  /* margin:auto centres it when there is room, and lets the backdrop scroll
+     to every part of a too-tall modal (flex centring would clip the top) */
+  margin:auto;
+  padding:clamp(24px,4vw,44px);
   transform:translateY(16px);
   transition:transform .25s ease;
   box-shadow:0 40px 90px rgba(10,10,10,.3);
@@ -895,7 +877,9 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
 }
 .field input,.field select,.field textarea{
   width:100%;
-  font-family:var(--font-body);font-size:15px;color:var(--ink);
+  /* 16px minimum stops iOS Safari from auto-zooming into focused fields,
+     which used to leave the submit button off-screen */
+  font-family:var(--font-body);font-size:16px;color:var(--ink);
   background:var(--white);border:1px solid var(--line);border-radius:14px;
   padding:13px 16px;
   transition:border-color .2s ease,box-shadow .2s ease;
@@ -916,6 +900,15 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
 .modal-submit{width:100%;margin-top:4px}
 .modal-submit:disabled{opacity:.6;cursor:wait;transform:none}
 .modal-privacy{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
+/* tighter modal on short screens so Send Message needs little or no scrolling */
+@media (max-height:780px){
+  .modal-sub{margin-bottom:16px}
+  .field{margin-bottom:11px}
+  .field input,.field select{padding:10px 14px}
+  .field textarea{min-height:64px;rows:3}
+  .modal-title{font-size:clamp(22px,3vw,30px)}
+  .modal-privacy{margin-top:8px}
+}
 .form-success{text-align:center;padding:24px 0 8px}
 .success-check{
   display:inline-flex;align-items:center;justify-content:center;
@@ -979,7 +972,6 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
         <li><a href="#journey">Journey</a></li>
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#mentorship">Mentorship</a></li>
-        <li><a href="#course">Course</a></li>
         <li><a href="#vision">Vision</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -1203,6 +1195,14 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
       </blockquote>
     </div>
   </div>
+  <div class="wrap">
+    <div class="course-stats reveal" aria-label="Upwork track record">
+      <div class="cs-item"><span class="cs-v">$60K+</span> earned on Upwork</div>
+      <div class="cs-item"><span class="cs-v">100%</span> Job Success rate</div>
+      <div class="cs-item"><span class="cs-v">5.0</span> Upwork rating</div>
+      <div class="cs-item"><span class="cs-v">1,345+</span> hours worked</div>
+    </div>
+  </div>
 </section>
 
 <!-- ================= MENTORSHIP ================= -->
@@ -1240,70 +1240,11 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
   </div>
 </section>
 
-<!-- ================= COURSE ================= -->
-<section class="course" id="course">
-  <div class="wrap course-grid">
-    <div class="course-copy reveal">
-      <p class="section-label">05 / Course</p>
-      <h2 class="h-display" style="font-size:clamp(34px,4.6vw,64px)">The Freelancing <em class="serif-i" style="text-transform:none;color:var(--accent);letter-spacing:0">Blueprint</em></h2>
-      <p class="course-intro">A step-by-step Upwork freelancing course built from real client work — from choosing your skill and setting up a profile that gets noticed, to writing proposals, winning clients, and scaling a sustainable freelancing career.</p>
-      <ul class="course-facts" aria-label="Course details">
-        <li><strong>6</strong> modules</li>
-        <li><strong>13</strong> video lessons</li>
-        <li><strong>260</strong> minutes</li>
-        <li><strong>10</strong> bonuses</li>
-        <li>Lifetime access</li>
-        <li>7-day money-back guarantee</li>
-      </ul>
-      <div class="course-who">
-        <p class="cw-item"><em>Complete beginners</em> — you’ve never freelanced before and want a clear, honest starting point.</p>
-        <p class="cw-item"><em>Stuck freelancers</em> — you’re already trying but can’t land global clients through online platforms.</p>
-      </div>
-      <div class="course-actions">
-        <a href="https://buildwithfatik.com/" target="_blank" rel="noopener" class="btn btn-dark">Get the Course <span class="arrow" aria-hidden="true">↗</span></a>
-        <p class="course-host">Hosted on <a href="https://buildwithfatik.com/" target="_blank" rel="noopener">buildwithfatik.com</a></p>
-      </div>
-    </div>
-    <aside class="course-card reveal reveal-d1" aria-label="Course offer">
-      <p class="cc-label">Launch offer · 10 bonuses included</p>
-      <p class="cc-price">₹199 <span>one-time · lifetime access · 7-day money-back guarantee</span></p>
-      <ul class="cc-list">
-        <li>Ready-to-use proposal templates pack</li>
-        <li>100 high-paying client sources list</li>
-        <li>AI tools for freelancers list</li>
-        <li>Live portfolio building workshop</li>
-        <li>Premium freelancing community access</li>
-        <li>International payment setup guide — and 4 more bonuses</li>
-      </ul>
-      <a href="https://buildwithfatik.com/" target="_blank" rel="noopener" class="btn btn-orange cc-btn">Start Learning <span class="arrow" aria-hidden="true">↗</span></a>
-    </aside>
-  </div>
-
-  <div class="wrap">
-    <div class="course-stats reveal" aria-label="Upwork track record">
-      <div class="cs-item"><span class="cs-v">$50K+</span> earned on Upwork</div>
-      <div class="cs-item"><span class="cs-v">100%</span> Job Success rate</div>
-      <div class="cs-item"><span class="cs-v">5.0</span> Upwork rating</div>
-      <div class="cs-item"><span class="cs-v">1,345+</span> hours worked</div>
-    </div>
-
-    <h3 class="course-sub reveal">Inside the <em class="serif-i" style="color:var(--accent)">six modules</em></h3>
-    <ul class="module-grid" aria-label="Course curriculum">
-      <li class="mentor-tile reveal"><i aria-hidden="true">01</i><strong>Welcome to Your Freelancing Journey</strong><span>Freelancing as a side hustle and the top platforms compared.</span></li>
-      <li class="mentor-tile reveal"><i aria-hidden="true">02</i><strong>Understanding Upwork</strong><span>Why Upwork works and how jobs, connects, and payments flow.</span></li>
-      <li class="mentor-tile reveal"><i aria-hidden="true">03</i><strong>Building a Strong Foundation</strong><span>Choosing a marketable skill and creating a profile clients trust.</span></li>
-      <li class="mentor-tile reveal"><i aria-hidden="true">04</i><strong>Winning Clients</strong><span>Proposal writing, client communication, and closing techniques.</span></li>
-      <li class="mentor-tile reveal"><i aria-hidden="true">05</i><strong>Delivering Like a Professional</strong><span>Smart delivery and building momentum after your first job.</span></li>
-      <li class="mentor-tile reveal"><i aria-hidden="true">06</i><strong>Scaling Beyond Your First Client</strong><span>Why freelancers plateau and how to grow consistent income.</span></li>
-    </ul>
-  </div>
-</section>
-
 <!-- ================= EDUCATION ================= -->
 <section class="education" id="education">
   <div class="wrap">
     <div class="reveal">
-      <p class="section-label">06 / Education</p>
+      <p class="section-label">05 / Education</p>
       <h2 class="h-display" style="font-size:clamp(34px,4.6vw,64px)">Education &amp; <em class="serif-i" style="text-transform:none;color:var(--accent);letter-spacing:0">global experience</em></h2>
     </div>
     <div class="edu-grid">
@@ -1373,7 +1314,7 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
 <section class="venture" id="entrepreneurship">
   <div class="wrap venture-grid">
     <div class="venture-left reveal">
-      <p class="section-label">07 / Entrepreneurship</p>
+      <p class="section-label">06 / Entrepreneurship</p>
       <h2 class="h-display">From individual freelancer to <em>team builder</em></h2>
     </div>
     <div class="venture-copy reveal reveal-d1">
@@ -1398,7 +1339,7 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
 <!-- ================= VISION ================= -->
 <section class="vision" id="vision">
   <div class="wrap">
-    <p class="section-label reveal">08 / Vision</p>
+    <p class="section-label reveal">07 / Vision</p>
     <h2 class="h-display vision-statement reveal">Freelancing can create opportunities <em>without borders.</em></h2>
     <div class="vision-grid">
       <div class="vision-copy reveal">
@@ -1451,7 +1392,6 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
           <li><a href="#journey">Journey</a></li>
           <li><a href="#expertise">Expertise</a></li>
           <li><a href="#mentorship">Mentorship</a></li>
-          <li><a href="#course">Course</a></li>
           <li><a href="#vision">Vision</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1501,7 +1441,6 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
           <option>Web Development</option>
           <option>Upwork Coaching</option>
           <option>Freelancing Mentorship</option>
-          <option>Freelancing Blueprint Course</option>
           <option>Digital Business Strategy</option>
           <option>Speaking / Collaboration</option>
           <option>Other</option>
