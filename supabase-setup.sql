@@ -6,10 +6,14 @@ create table if not exists public.enquiries (
   created_at  timestamptz not null default now(),
   name        text not null,
   email       text not null,
+  phone       text,
   topic       text,
   message     text not null,
   page        text
 );
+
+-- (if the table already exists without phone:)
+-- alter table public.enquiries add column if not exists phone text;
 
 alter table public.enquiries enable row level security;
 

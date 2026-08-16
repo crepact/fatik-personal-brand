@@ -1338,6 +1338,10 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
         <input type="email" id="cfEmail" name="email" autocomplete="email" required placeholder="you@example.com">
       </div>
       <div class="field">
+        <label for="cfPhone">Phone number</label>
+        <input type="tel" id="cfPhone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+91 98765 43210">
+      </div>
+      <div class="field">
         <label for="cfTopic">What is this about?</label>
         <select id="cfTopic" name="topic">
           <option>Web Development</option>
@@ -1440,9 +1444,15 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
 
     var name = document.getElementById("cfName").value.trim();
     var email = document.getElementById("cfEmail").value.trim();
+    var phone = document.getElementById("cfPhone").value.trim();
     var message = document.getElementById("cfMessage").value.trim();
     if(!name || !email || !message || email.indexOf("@") < 1){
       errBox.textContent = "Please fill in your name, a valid email, and a message.";
+      errBox.hidden = false;
+      return;
+    }
+    if(phone.replace(/\D/g,"").length < 7){
+      errBox.textContent = "Please enter a valid phone number (including country code).";
       errBox.hidden = false;
       return;
     }
@@ -1468,6 +1478,7 @@ a.hero-chip:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,10,1
       body: JSON.stringify({
         name: name,
         email: email,
+        phone: phone,
         topic: document.getElementById("cfTopic").value,
         message: message,
         page: location.href
