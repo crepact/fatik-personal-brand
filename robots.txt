@@ -3,5 +3,6 @@
 
 User-agent: *
 Allow: /
+Disallow: /admin.html
 
 Sitemap: https://crepact.github.io/fatik-personal-brand/sitemap.xml

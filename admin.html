@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leads Dashboard | Fatik Rahman</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F8F6F1; --bg-soft:#FFF9F0; --peach:#FFE1BD; --ink:#0A0A0A;
+  --accent:#FF7426; --muted:#68645F; --line:#DDD8CF; --white:#FFFFFF;
+  --green:#2E7D4F; --blue:#2B5BA8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Manrope',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--accent);color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+.hidden{display:none!important}
+
+/* ---------- login ---------- */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:radial-gradient(700px 500px at 70% 20%,var(--peach) 0%,rgba(255,225,189,0) 60%),var(--bg)}
+.login-card{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:44px 40px;width:min(420px,100%);box-shadow:0 30px 70px rgba(10,10,10,.08)}
+.brand{font-family:'Instrument Serif',serif;font-style:italic;font-size:26px;margin-bottom:6px}
+.brand span{color:var(--accent)}
+.login-card h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:28px;line-height:1.05;margin:14px 0 6px}
+.login-card .sub{font-size:13.5px;color:var(--muted);margin-bottom:26px}
+.f{margin-bottom:16px}
+.f label{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.f input,.f select{width:100%;font-family:inherit;font-size:15px;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:12px 15px;transition:border-color .2s}
+.f input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,116,38,.15)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:999px;padding:13px 26px;font-weight:800;font-size:14px;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--accent)}
+.btn-orange{background:var(--accent);color:#fff}
+.btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-block{width:100%}
+.msg{border-radius:12px;padding:11px 15px;font-size:13.5px;font-weight:600;margin-bottom:14px}
+.msg-err{background:#FDEBE3;border:1px solid #F5C4A8;color:#8a3c10}
+.msg-ok{background:#E8F4EC;border:1px solid #BDDcc8;color:#205c3b}
+
+/* ---------- dashboard ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,3vw,32px)}
+.topbar .who{font-size:12.5px;color:var(--muted);font-weight:600}
+.topbar .actions{display:flex;gap:10px;flex-wrap:wrap}
+.topbar .btn{padding:9px 18px;font-size:13px}
+.wrap{max-width:1240px;margin:0 auto;padding:clamp(20px,3vw,36px) clamp(16px,3vw,32px) 60px}
+.page-title{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,3.5vw,40px);line-height:1;margin-bottom:4px}
+.page-title em{font-family:'Instrument Serif',serif;font-style:italic;text-transform:none;color:var(--accent)}
+.page-sub{font-size:13.5px;color:var(--muted);margin-bottom:26px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:26px}
+.stat{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.stat .k{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:'Anton',sans-serif;font-size:34px;line-height:1.1;margin-top:4px}
+.stat .v small{font-family:'Manrope';font-size:12px;color:var(--muted);font-weight:600}
+.stat.hot .v{color:var(--accent)}
+
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;align-items:center}
+.controls input,.controls select{font-family:inherit;font-size:14px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:10px 18px}
+.controls input{flex:1;min-width:200px}
+.controls .count{font-size:13px;color:var(--muted);font-weight:700;margin-left:auto}
+
+.leads{display:grid;gap:12px}
+.lead{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px 22px;transition:box-shadow .2s,border-color .2s}
+.lead:hover{border-color:#c9c3b8;box-shadow:0 10px 26px rgba(10,10,10,.05)}
+.lead-top{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.lead-name{font-weight:800;font-size:16px}
+.pill{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:4px 12px;border:1px solid var(--line);color:var(--muted)}
+.pill.topic{background:var(--bg-soft);color:var(--ink)}
+.lead-when{font-size:12.5px;color:var(--muted);font-weight:600;margin-left:auto}
+.lead-contacts{display:flex;flex-wrap:wrap;gap:8px 20px;margin:10px 0 8px;font-size:13.5px;font-weight:600}
+.lead-contacts a{color:var(--accent)}
+.lead-contacts a:hover{text-decoration:underline}
+.lead-msg{font-size:14px;color:#3a3733;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:12px 15px;white-space:pre-wrap}
+.lead-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+.lead-foot .src{font-size:11.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;max-width:340px;white-space:nowrap}
+.status-sel{font-family:inherit;font-size:12.5px;font-weight:800;border-radius:999px;padding:7px 14px;border:1.5px solid var(--line);background:var(--white)}
+.status-new{border-color:var(--accent);color:var(--accent)}
+.status-contacted{border-color:var(--blue);color:var(--blue)}
+.status-closed{border-color:var(--green);color:var(--green)}
+.empty{background:var(--white);border:1px dashed var(--line);border-radius:18px;padding:60px 20px;text-align:center;color:var(--muted)}
+.empty .big{font-family:'Instrument Serif',serif;font-style:italic;font-size:26px;color:var(--ink);margin-bottom:6px}
+
+/* modal */
+.overlay{position:fixed;inset:0;z-index:100;background:rgba(10,10,10,.5);display:flex;align-items:center;justify-content:center;padding:20px}
+.overlay[hidden]{display:none}
+.box{background:var(--white);border-radius:20px;padding:32px;width:min(400px,100%)}
+.box h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:22px;margin-bottom:16px}
+@media(max-width:640px){.lead-when{margin-left:0}.topbar{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN VIEW ============ -->
+<div class="login-wrap" id="loginView">
+  <div class="login-card">
+    <p class="brand">Fatik Rahman<span>.</span></p>
+    <h1>Admin Dashboard</h1>
+    <p class="sub">Sign in to view and manage your leads.</p>
+    <div class="msg msg-err hidden" id="loginErr"></div>
+    <form id="loginForm">
+      <div class="f">
+        <label for="liEmail">Email</label>
+        <input type="email" id="liEmail" autocomplete="username" required>
+      </div>
+      <div class="f">
+        <label for="liPw">Password</label>
+        <input type="password" id="liPw" autocomplete="current-password" required>
+      </div>
+      <button class="btn btn-dark btn-block" id="loginBtn" type="submit">Sign In</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ DASHBOARD VIEW ============ -->
+<div id="dashView" class="hidden">
+  <div class="topbar">
+    <p class="brand">Fatik Rahman<span>.</span> <span style="font-family:Manrope;font-style:normal;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--muted)">ADMIN</span></p>
+    <div class="actions">
+      <span class="who" id="whoami"></span>
+      <button class="btn btn-ghost" id="exportBtn">Export CSV</button>
+      <button class="btn btn-ghost" id="pwBtn">Change Password</button>
+      <button class="btn btn-dark" id="logoutBtn">Log Out</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h1 class="page-title">Lead <em>inbox</em></h1>
+    <p class="page-sub">Every enquiry submitted through fatikrahman contact forms, newest first.</p>
+
+    <div class="stats">
+      <div class="stat hot"><div class="k">New leads</div><div class="v" id="stNew">–</div></div>
+      <div class="stat"><div class="k">This week</div><div class="v" id="stWeek">–</div></div>
+      <div class="stat"><div class="k">Total leads</div><div class="v" id="stTotal">–</div></div>
+      <div class="stat"><div class="k">Top topic</div><div class="v" id="stTopic" style="font-size:20px;padding-top:8px">–</div></div>
+    </div>
+
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search name, email, phone, message…">
+      <select id="fTopic"><option value="">All topics</option></select>
+      <select id="fStatus">
+        <option value="">All statuses</option>
+        <option value="new">New</option>
+        <option value="contacted">Contacted</option>
+        <option value="closed">Closed</option>
+      </select>
+      <button class="btn btn-ghost" id="refreshBtn">Refresh</button>
+      <span class="count" id="count"></span>
+    </div>
+
+    <div class="msg msg-err hidden" id="dashErr"></div>
+    <div class="leads" id="leads"></div>
+  </div>
+</div>
+
+<!-- change password modal -->
+<div class="overlay" id="pwOverlay" hidden>
+  <div class="box">
+    <h2>Change Password</h2>
+    <div class="msg msg-err hidden" id="pwErr"></div>
+    <div class="msg msg-ok hidden" id="pwOk"></div>
+    <form id="pwForm">
+      <div class="f">
+        <label for="pwNew">New password (min 8 characters)</label>
+        <input type="password" id="pwNew" autocomplete="new-password" minlength="8" required>
+      </div>
+      <div style="display:flex;gap:10px">
+        <button class="btn btn-orange" type="submit">Update</button>
+        <button class="btn btn-ghost" type="button" id="pwCancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var URL_ = "https://vfdtikkagqnnkqhjnuqm.supabase.co";
+var ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZmZHRpa2thZ3FubmtxaGpudXFtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY4OTQyMjksImV4cCI6MjEwMjQ3MDIyOX0.TAfVXbhq5ilu5-ldW0DMs5Ui1OeAjVwwCSHBI8KLAqg";
+
+var session = null;
+var allLeads = [];
+
+function $(id){ return document.getElementById(id); }
+function saveSession(s){ session = s; sessionStorage.setItem("fr_admin_session", JSON.stringify(s)); }
+function loadSession(){ try{ session = JSON.parse(sessionStorage.getItem("fr_admin_session")); }catch(e){ session=null; } }
+function clearSession(){ session=null; sessionStorage.removeItem("fr_admin_session"); }
+
+function authFetch(path, opts, retry){
+  opts = opts || {};
+  opts.headers = Object.assign({
+    "apikey": ANON,
+    "Authorization": "Bearer " + (session ? session.access_token : ANON),
+    "Content-Type": "application/json"
+  }, opts.headers || {});
+  return fetch(URL_ + path, opts).then(function(res){
+    if(res.status === 401 && session && session.refresh_token && retry !== false){
+      return fetch(URL_ + "/auth/v1/token?grant_type=refresh_token", {
+        method:"POST",
+        headers:{"apikey":ANON,"Content-Type":"application/json"},
+        body: JSON.stringify({refresh_token: session.refresh_token})
+      }).then(function(r){ return r.json(); }).then(function(j){
+        if(j.access_token){ saveSession(j); return authFetch(path, opts, false); }
+        showLogin(); throw new Error("session expired");
+      });
+    }
+    return res;
+  });
+}
+
+/* ---------- views ---------- */
+function showLogin(){ clearSession(); $("loginView").classList.remove("hidden"); $("dashView").classList.add("hidden"); }
+function showDash(){
+  $("loginView").classList.add("hidden");
+  $("dashView").classList.remove("hidden");
+  $("whoami").textContent = (session.user && session.user.email) || "";
+  loadLeads();
+}
+
+/* ---------- login ---------- */
+$("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  $("loginErr").classList.add("hidden");
+  $("loginBtn").disabled = true; $("loginBtn").textContent = "Signing in…";
+  fetch(URL_ + "/auth/v1/token?grant_type=password", {
+    method:"POST",
+    headers:{"apikey":ANON,"Content-Type":"application/json"},
+    body: JSON.stringify({email: $("liEmail").value.trim(), password: $("liPw").value})
+  }).then(function(r){ return r.json(); }).then(function(j){
+    if(j.access_token){ saveSession(j); showDash(); }
+    else{
+      $("loginErr").textContent = j.error_description || j.msg || "Sign in failed. Check your email and password.";
+      $("loginErr").classList.remove("hidden");
+    }
+  }).catch(function(){
+    $("loginErr").textContent = "Network error — please try again.";
+    $("loginErr").classList.remove("hidden");
+  }).finally(function(){
+    $("loginBtn").disabled = false; $("loginBtn").textContent = "Sign In";
+  });
+});
+
+/* ---------- leads ---------- */
+function loadLeads(){
+  $("dashErr").classList.add("hidden");
+  authFetch("/rest/v1/enquiries?select=*&order=created_at.desc").then(function(r){
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    return r.json();
+  }).then(function(rows){
+    allLeads = rows;
+    buildTopicFilter(rows);
+    renderStats(rows);
+    renderLeads();
+  }).catch(function(err){
+    $("dashErr").textContent = "Could not load leads ("+err.message+"). If this persists, your account may not have admin access.";
+    $("dashErr").classList.remove("hidden");
+  });
+}
+
+function buildTopicFilter(rows){
+  var sel = $("fTopic");
+  var cur = sel.value;
+  var topics = {};
+  rows.forEach(function(r){ if(r.topic) topics[r.topic]=1; });
+  sel.innerHTML = '<option value="">All topics</option>' + Object.keys(topics).sort().map(function(t){
+    return '<option'+(t===cur?' selected':'')+'>'+esc(t)+'</option>';
+  }).join("");
+}
+
+function renderStats(rows){
+  var now = Date.now(), week = 7*24*3600*1000;
+  $("stTotal").textContent = rows.length;
+  $("stNew").textContent = rows.filter(function(r){ return r.status==="new"; }).length;
+  $("stWeek").textContent = rows.filter(function(r){ return now - new Date(r.created_at).getTime() < week; }).length;
+  var t = {};
+  rows.forEach(function(r){ if(r.topic) t[r.topic]=(t[r.topic]||0)+1; });
+  var top = Object.keys(t).sort(function(a,b){ return t[b]-t[a]; })[0];
+  $("stTopic").textContent = top ? top : "—";
+}
+
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+
+function fmtWhen(iso){
+  var d = new Date(iso);
+  return d.toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"}) + " · " +
+         d.toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit"});
+}
+
+function renderLeads(){
+  var q = $("q").value.trim().toLowerCase();
+  var ft = $("fTopic").value, fs = $("fStatus").value;
+  var rows = allLeads.filter(function(r){
+    if(ft && r.topic !== ft) return false;
+    if(fs && r.status !== fs) return false;
+    if(q){
+      var hay = [r.name,r.email,r.phone,r.message,r.topic].join(" ").toLowerCase();
+      if(hay.indexOf(q) === -1) return false;
+    }
+    return true;
+  });
+  $("count").textContent = rows.length + " lead" + (rows.length===1?"":"s");
+  if(!rows.length){
+    $("leads").innerHTML = '<div class="empty"><div class="big">No leads here yet</div>Enquiries from the website will appear the moment they are submitted.</div>';
+    return;
+  }
+  $("leads").innerHTML = rows.map(function(r){
+    return '<article class="lead">' +
+      '<div class="lead-top">' +
+        '<span class="lead-name">'+esc(r.name)+'</span>' +
+        (r.topic ? '<span class="pill topic">'+esc(r.topic)+'</span>' : '') +
+        '<span class="lead-when">'+fmtWhen(r.created_at)+'</span>' +
+      '</div>' +
+      '<div class="lead-contacts">' +
+        '<a href="mailto:'+esc(r.email)+'">✉ '+esc(r.email)+'</a>' +
+        (r.phone ? '<a href="tel:'+esc(String(r.phone).replace(/[^+\d]/g,""))+'">✆ '+esc(r.phone)+'</a>' : '') +
+      '</div>' +
+      '<div class="lead-msg">'+esc(r.message)+'</div>' +
+      '<div class="lead-foot">' +
+        '<select class="status-sel status-'+esc(r.status)+'" data-id="'+esc(r.id)+'">' +
+          ["new","contacted","closed"].map(function(s){
+            return '<option value="'+s+'"'+(r.status===s?" selected":"")+'>'+s.charAt(0).toUpperCase()+s.slice(1)+'</option>';
+          }).join("") +
+        '</select>' +
+        (r.page ? '<span class="src">from '+esc(r.page)+'</span>' : '') +
+      '</div>' +
+    '</article>';
+  }).join("");
+  Array.prototype.forEach.call(document.querySelectorAll(".status-sel"), function(sel){
+    sel.addEventListener("change", function(){
+      var id = sel.getAttribute("data-id"), val = sel.value;
+      authFetch("/rest/v1/enquiries?id=eq."+encodeURIComponent(id), {
+        method:"PATCH", body: JSON.stringify({status: val}),
+        headers:{"Prefer":"return=minimal"}
+      }).then(function(r){
+        if(!r.ok) throw new Error();
+        sel.className = "status-sel status-"+val;
+        var lead = allLeads.find(function(l){ return String(l.id)===String(id); });
+        if(lead) lead.status = val;
+        renderStats(allLeads);
+      }).catch(function(){ alert("Could not update status — try again."); });
+    });
+  });
+}
+
+["q","fTopic","fStatus"].forEach(function(id){
+  $(id).addEventListener(id==="q"?"input":"change", renderLeads);
+});
+$("refreshBtn").addEventListener("click", loadLeads);
+
+/* ---------- CSV export ---------- */
+$("exportBtn").addEventListener("click", function(){
+  var cols = ["created_at","name","email","phone","topic","message","status","page"];
+  var csv = cols.join(",") + "\n" + allLeads.map(function(r){
+    return cols.map(function(c){
+      return '"' + String(r[c]==null?"":r[c]).replace(/"/g,'""') + '"';
+    }).join(",");
+  }).join("\n");
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv],{type:"text/csv"}));
+  a.download = "fatik-rahman-leads.csv";
+  a.click();
+});
+
+/* ---------- change password ---------- */
+$("pwBtn").addEventListener("click", function(){ $("pwOverlay").hidden = false; });
+$("pwCancel").addEventListener("click", function(){ $("pwOverlay").hidden = true; });
+$("pwForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  $("pwErr").classList.add("hidden"); $("pwOk").classList.add("hidden");
+  authFetch("/auth/v1/user", {method:"PUT", body: JSON.stringify({password: $("pwNew").value})})
+  .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+  .then(function(res){
+    if(res.ok){ $("pwOk").textContent="Password updated."; $("pwOk").classList.remove("hidden"); $("pwNew").value=""; }
+    else{ $("pwErr").textContent = res.j.msg || res.j.error_description || "Could not update password."; $("pwErr").classList.remove("hidden"); }
+  });
+});
+
+/* ---------- logout ---------- */
+$("logoutBtn").addEventListener("click", function(){
+  authFetch("/auth/v1/logout", {method:"POST"}).finally(function(){ showLogin(); });
+});
+
+/* ---------- boot ---------- */
+loadSession();
+if(session && session.access_token){ showDash(); } else { showLogin(); }
+})();
+</script>
+</body>
+</html>

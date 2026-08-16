@@ -17,11 +17,23 @@ create table if not exists public.enquiries (
 
 alter table public.enquiries enable row level security;
 
--- Visitors (anon key) may ONLY insert. No select/update/delete policies exist,
--- so submissions are write-only from the website and readable only from the
--- dashboard or with the service-role key.
+-- Visitors (anon key) may ONLY insert. Reading and updating requires signing
+-- in on /admin.html as the admin account (email locked in the policies below).
 create policy "anyone can submit an enquiry"
   on public.enquiries
   for insert
   to anon
   with check (true);
+
+-- Lead status workflow used by the admin dashboard (new / contacted / closed)
+alter table public.enquiries add column if not exists status text not null default 'new';
+
+-- Admin-only read/update for the dashboard (replace the email if it changes)
+create policy "admin can read enquiries"
+  on public.enquiries for select to authenticated
+  using ((auth.jwt()->>'email') = 'magnolia.ads2025@gmail.com');
+
+create policy "admin can update enquiries"
+  on public.enquiries for update to authenticated
+  using ((auth.jwt()->>'email') = 'magnolia.ads2025@gmail.com')
+  with check ((auth.jwt()->>'email') = 'magnolia.ads2025@gmail.com');
